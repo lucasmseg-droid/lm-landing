@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Avaliação gratuita de seguro de vida com a LM Gestão de Riscos."
+    />
+    <title>LM Gestão de Riscos | Avaliação gratuita de seguro de vida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260710-logo-stats" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <header class="topbar" aria-label="Topo da página">
+          <a class="brand" href="#inicio" aria-label="LM Gestão de Riscos">
+            <img src="./assets/lm-logo-transparent.png" alt="LM Gestão de Riscos" />
+          </a>
+          <a class="topbar__link" href="#diagnostico">Iniciar avaliação gratuita</a>
+        </header>
+
+        <div class="hero__content" id="inicio">
+          <div class="hero__copy">
+            <p class="eyebrow">Seguro de vida sem achismo</p>
+            <h1 id="hero-title">Descubra qual proteção faz sentido para sua família.</h1>
+            <p class="hero__lead">
+              Responda um formulário rápido e receba uma análise personalizada da LM Gestão de
+              Riscos, com diagnóstico e orçamento para o seu momento de vida.
+            </p>
+            <ul class="benefit-pills" aria-label="Benefícios da avaliação">
+              <li>Leva menos de 2 minutos</li>
+              <li>100% personalizado</li>
+            </ul>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#diagnostico">Começar agora</a>
+              <a class="button button--ghost button--whatsapp" href="https://wa.me/5519982404418" target="_blank" rel="noreferrer">
+                Chamar no WhatsApp
+              </a>
+            </div>
+            <dl class="trust-row" aria-label="Diferenciais da LM">
+              <div>
+                <span class="trust-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z" />
+                    <circle cx="12" cy="12" r="2.8" />
+                  </svg>
+                </span>
+                <dt>Olhar consultivo</dt>
+                <dd>Antes da cotação, vem o entendimento</dd>
+              </div>
+              <div>
+                <span class="trust-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 3l7 3v5.4c0 4.3-2.8 7.9-7 9.6-4.2-1.7-7-5.3-7-9.6V6l7-3Z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+                </span>
+                <dt>Proteção sob medida</dt>
+                <dd>Família, renda, patrimônio e objetivos</dd>
+              </div>
+              <div>
+                <span class="trust-row__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                    <path d="M4.5 21a7.5 7.5 0 0 1 15 0" />
+                    <path d="M18 8h2.5v4H18" />
+                  </svg>
+                </span>
+                <dt>Consultor exclusivo</dt>
+                <dd>Um concierge para acompanhar você, sem 0800 ou troca de e-mails infinitas</dd>
+              </div>
+            </dl>
+          </div>
+
+          <aside class="lead-panel" id="diagnostico" aria-labelledby="form-title">
+            <div class="lead-panel__header">
+              <p class="eyebrow">Consultor virtual</p>
+              <h2 id="form-title">Descubra seu perfil de proteção</h2>
+              <p>Responda algumas perguntas rápidas para receber um diagnóstico preciso.</p>
+            </div>
+
+            <div class="agent" id="leadAgent" aria-live="polite">
+              <div class="agent__messages" id="agentMessages"></div>
+              <div class="agent__controls" id="agentControls"></div>
+              <p class="form-note">
+                Seus dados serão usados apenas para atendimento da solicitação. A contratação depende de
+                análise de perfil e condições da seguradora.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--scheduler" id="agenda" hidden aria-labelledby="scheduler-title">
+        <div class="section__inner scheduler">
+          <div class="scheduler__heading">
+            <div>
+              <p class="eyebrow">Próximo passo</p>
+              <h2 id="scheduler-title">Escolha o melhor horário para receber seu diagnóstico.</h2>
+              <p>
+                Um especialista vai organizar suas respostas e apresentar uma solução alinhada ao seu momento,
+                com explicação simples sobre valores, coberturas e próximos passos.
+              </p>
+            </div>
+            <ul class="scheduler__steps" aria-label="Como funciona a apresentação">
+              <li>30 minutos</li>
+              <li>Diagnóstico individual</li>
+              <li>Solução personalizada</li>
+            </ul>
+          </div>
+          <div class="scheduler__card">
+            <div class="scheduler__card-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="scheduler__embed" id="calendlyEmbed"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--white" aria-labelledby="why-title">
+        <div class="section__inner">
+          <div class="section__heading">
+            <p class="eyebrow">Por que fazer agora?</p>
+            <h2 id="why-title">Seguro de vida não é só indenização: <span class="text-nowrap">é planejamento.</span></h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature__icon" aria-hidden="true">01</span>
+              <h3>Proteção para quem depende de você</h3>
+              <p>Ajuda a preservar renda, projetos e tranquilidade familiar em momentos difíceis.</p>
+            </article>
+            <article class="feature">
+              <span class="feature__icon" aria-hidden="true">02</span>
+              <h3>Coberturas adequadas ao perfil</h3>
+              <p>O diagnóstico evita contratar pouco, contratar demais ou pagar por algo que não faz sentido.</p>
+            </article>
+            <article class="feature">
+              <span class="feature__icon" aria-hidden="true">03</span>
+              <h3>Se um imprevisto acontecer com você, seu plano continua de pé?</h3>
+              <p>O diagnóstico mostra se sua renda, patrimônio e padrão de vida estariam protegidos diante de um imprevisto.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" aria-labelledby="life-title">
+        <div class="section__inner split-section">
+          <div class="section__heading">
+            <p class="eyebrow">Proteção em vida</p>
+            <h2 id="life-title">Seguro em Vida protege você, seu patrimônio e seu legado.</h2>
+            <p>
+              Muitas pessoas associam seguro de vida apenas à falta, mas ele pode apoiar a continuidade
+              financeira em situações de saúde, acidente ou perda temporária da capacidade de trabalhar.
+            </p>
+            <div class="life-proof">
+              <p class="life-proof__stat">
+                <span>90%*</span> das indenizações divulgadas foram pagas ao próprio segurado ainda em vida.
+              </p>
+              <p>
+                Proteção real para você, em vida.
+              </p>
+              <small>*Fonte: dado público divulgado pela seguradora Prudential.</small>
+            </div>
+          </div>
+          <div class="coverage-list" aria-label="Exemplos de proteções em vida">
+            <article>
+              <h3>Renda interrompida</h3>
+              <p>Coberturas podem ajudar em afastamentos por doença ou acidente, especialmente para autônomos e profissionais liberais.</p>
+            </article>
+            <article>
+              <h3>Doenças graves</h3>
+              <p>Algumas soluções preveem indenização em diagnóstico de condições graves, dando liberdade para reorganizar a vida financeira.</p>
+            </article>
+            <article>
+              <h3>Invalidez ou acidente</h3>
+              <p>Proteções podem reduzir o impacto financeiro de eventos que mudam a rotina, a renda e os planos da família.</p>
+            </article>
+            <article>
+              <h3>Patrimônio e padrão de vida</h3>
+              <p>O objetivo é evitar vender bens, consumir reservas ou depender de ajuda improvisada em um momento delicado.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--white" aria-labelledby="numbers-title">
+        <div class="section__inner">
+          <div class="section__heading section__heading--wide">
+            <p class="eyebrow">Dados para refletir</p>
+            <h2 id="numbers-title">Imprevistos não pedem licença, mas planejamento muda o impacto.</h2>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-card">
+              <strong>300 mil a 400 mil</strong>
+              <p>casos de infarto são estimados por ano no Brasil pelo Ministério da Saúde.</p>
+            </article>
+            <article class="stat-card">
+              <strong>apenas 18%</strong>
+              <p>dos brasileiros tinham seguro de vida em pesquisa FenaPrevi/Datafolha.</p>
+            </article>
+            <article class="stat-card">
+              <strong>+8,3%</strong>
+              <p>foi o crescimento do mercado de seguros de pessoas em 2025, segundo a FenaPrevi.</p>
+            </article>
+          </div>
+          <p class="source-note">
+            Fontes: Ministério da Saúde, FenaPrevi/Datafolha e dados públicos do mercado de seguros de pessoas.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--soft" aria-labelledby="faq-title">
+        <div class="section__inner faq-section">
+          <div class="section__heading">
+            <p class="eyebrow">Dúvidas comuns</p>
+            <h2 id="faq-title">Antes de decidir, entenda o essencial.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Seguro de vida serve só para morte?</summary>
+              <p>Não. Dependendo da apólice, pode incluir coberturas para doenças graves, invalidez, acidentes e proteção de renda.</p>
+            </details>
+            <details>
+              <summary>Plano de saúde substitui seguro de vida?</summary>
+              <p>Não. Eles são complementares: o plano de saúde ajuda a arcar com os custos médicos, enquanto o seguro de vida traz liquidez para manter o padrão de vida e pagar as contas enquanto você foca na recuperação.</p>
+            </details>
+            <details>
+              <summary>Tenho seguro pela empresa. Preciso revisar?</summary>
+              <p>Vale revisar. Muitas coberturas corporativas são padronizadas e podem não acompanhar sua renda, família, patrimônio e objetivos.</p>
+            </details>
+            <details>
+              <summary>O diagnóstico me obriga a contratar?</summary>
+              <p>Não. A ideia é entender seu momento e mostrar caminhos possíveis, com orientação clara para você decidir com segurança.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="site-footer__inner">
+          <p>LM Gestão de Riscos</p>
+          <nav aria-label="Links legais">
+            <a href="./privacidade.html">Política de Privacidade</a>
+            <a href="./termos.html">Termos de Serviço</a>
+            <a href="./exclusao-de-dados.html">Exclusão de Dados</a>
+          </nav>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      window.LM_CALENDLY_URL = "https://calendly.com/lucas-mseg/30min";
+      window.LM_LEAD_ENDPOINT = "";
+    </script>
+    <script src="./script.js?v=20260709-protecao-em-vida"></script>
+  </body>
+</html>
