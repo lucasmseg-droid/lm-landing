@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Diagnostico rapido de protecao financeira da LM Gestao de Riscos."
+      content="Diagnostico de protecao financeira da LM Gestao de Riscos."
     />
     <title>Diagnóstico de proteção | LM Gestão de Riscos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,57 +14,200 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260714-funil-lm-v1" />
+    <link rel="stylesheet" href="./styles.css?v=20260714-hero-static-v14" />
   </head>
   <body>
-    <main class="funnel-shell" id="app">
-      <section class="screen screen--hero is-active" id="heroScreen" aria-labelledby="heroTitle">
-        <div class="brand-mark" aria-label="LM Gestão de Riscos">
-          <img src="./assets/lm-logo-transparent.png" alt="LM Gestão de Riscos" />
-        </div>
-
-        <div class="hero-content">
-          <h1 id="heroTitle">
-            Descubra o Nível de Proteção
-            <span>da Sua Família</span>
-          </h1>
-          <p>
-            Responda <strong>10 perguntas rápidas</strong> e receba uma
-            <strong>análise personalizada</strong> sobre o melhor plano de proteção
-            financeira para sua família.
-          </p>
-
-          <div class="trust-row" aria-label="Resumo do diagnóstico">
-            <span><b aria-hidden="true">⏱</b> Leva apenas 2 minutos</span>
-            <span><b aria-hidden="true">🎯</b> 100% personalizado</span>
-            <span><b aria-hidden="true">🔒</b> Sem compromisso</span>
-          </div>
-
-          <button class="primary-button" id="startButton" type="button">
-            Iniciar Avaliação Gratuita
-          </button>
-        </div>
-      </section>
-
-      <section class="screen screen--quiz" id="quizScreen" aria-live="polite" hidden>
-        <div class="quiz-card">
-          <div class="brand-mark brand-mark--small">
+    <main>
+      <section class="landing-hero" id="inicio" aria-labelledby="hero-title">
+        <header class="topbar">
+          <a class="brand" href="#inicio" aria-label="LM Gestão de Riscos">
             <img src="./assets/lm-logo-transparent.png" alt="LM Gestão de Riscos" />
-          </div>
+          </a>
+        </header>
 
-          <div class="progress-header" id="progressHeader">
-            <span id="progressLabel">Pergunta 1 de 10</span>
-            <span id="progressPercent">10%</span>
-          </div>
-          <div class="progress-track" aria-hidden="true">
-            <i id="progressBar"></i>
-          </div>
-
-          <div id="questionPanel"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Seu próximo passo</p>
+          <h1 id="hero-title">2 minutos que mudam como você enxerga sua proteção.</h1>
+          <p>Sete perguntas simples, uma classificação de risco na hora e um plano personalizado por email. Você só compartilha dados quando decide receber o plano.</p>
+          <a class="button button--primary" href="#diagnostico">Começar diagnóstico agora →</a>
+          <small>7 perguntas · 2 minutos · plano por email apenas se você quiser</small>
         </div>
       </section>
+
+      <section class="diagnostic-hero" id="diagnostico" aria-labelledby="diagnostic-title">
+        <div class="diagnostic-app" id="diagnostic-app" aria-live="polite">
+          <div class="progress-row" id="progressRow">
+            <span id="progressText">01 / 07</span>
+            <div class="progress-track" aria-hidden="true"><i id="progressBar"></i></div>
+          </div>
+          <div class="question-card" id="questionCard"></div>
+          <div class="diagnostic-actions">
+            <button class="back-button" id="backButton" type="button">← Voltar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="scheduler-section" id="agenda" hidden aria-labelledby="scheduler-title">
+        <div class="scheduler">
+          <div class="scheduler__heading">
+            <div>
+              <p class="eyebrow">Próximo passo</p>
+              <h2 id="scheduler-title">Escolha o melhor horário para receber seu plano.</h2>
+              <p>Lucas organiza suas respostas e apresenta uma solução alinhada ao seu momento, com explicação simples sobre valores, coberturas e próximos passos.</p>
+            </div>
+            <ul class="scheduler__steps" aria-label="Como funciona a apresentação">
+              <li>30 minutos</li>
+              <li>Diagnóstico individual</li>
+              <li>Plano personalizado</li>
+            </ul>
+          </div>
+          <div class="scheduler__card">
+            <div class="scheduler__card-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="scheduler__embed" id="calendlyEmbed"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section" aria-labelledby="how-title">
+        <div class="section__header">
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="how-title">Do primeiro clique ao plano personalizado.</h2>
+        </div>
+        <div class="journey-grid">
+          <article>
+            <strong>01</strong>
+            <h3>Responder o diagnóstico</h3>
+            <p>Você responde sobre renda, dependentes, reserva e proteção atual em uma sequência curta e objetiva.</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <h3>Receber o mapa de risco</h3>
+            <p>A página mostra sua classificação na hora, com pontuação e coberturas que merecem atenção.</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <h3>Seguir com o plano sob medida</h3>
+            <p>Se fizer sentido, Lucas compara opções e monta uma proposta adequada ao seu perfil.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-section" aria-labelledby="method-title">
+        <div class="section__header">
+          <p class="eyebrow">Por que analisar</p>
+          <h2 id="method-title">Um jeito diferente de pensar proteção.</h2>
+        </div>
+        <div class="method-grid">
+          <article class="method-card method-card--danger">
+            <span class="icon-dot" aria-hidden="true">×</span>
+            <h3>Sem bandeira. Sem vínculo.</h3>
+            <p>Trabalhamos entre as principais seguradoras do país e indicamos apenas o que faz sentido para você, não pela maior comissão.</p>
+            <div class="mini-compare">
+              <b>Apólice genérica</b>
+              <ul>
+                <li>cobertura sem diagnóstico</li>
+                <li>valor que parece barato</li>
+                <li>risco de negativa</li>
+              </ul>
+            </div>
+          </article>
+          <article class="method-card method-card--blue">
+            <span class="icon-dot" aria-hidden="true">✓</span>
+            <h3>Só seguro de vida. Só o que importa.</h3>
+            <p>Não somos corretora “geral”. O foco está em vida, renda e continuidade financeira para montar um plano realmente humano.</p>
+            <div class="mini-compare">
+              <b>Plano sob medida</b>
+              <ul>
+                <li>proteção de renda</li>
+                <li>doenças graves</li>
+                <li>capital alinhado ao padrão de vida</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="proof-section" aria-labelledby="proof-title">
+        <div class="section__header">
+          <p class="eyebrow">Apólice preenchida</p>
+          <h2 id="proof-title">Apólice preenchida com método.</h2>
+          <p>Sinistro recusado começa antes do sinistro: na hora do preenchimento. Declaração de saúde detalhada, coberturas alinhadas ao perfil e leitura técnica da apólice são o que garantem que o benefício seja pago quando precisar.</p>
+        </div>
+        <div class="policy-preview" aria-label="Exemplo de checklist de apólice">
+          <div><span>Nome completo</span><b>preenchido</b></div>
+          <div><span>Declaração de saúde</span><b>detalhada</b></div>
+          <div><span>Coberturas contratadas</span><b>alinhadas</b></div>
+          <div><span>Beneficiários</span><b>revisados</b></div>
+        </div>
+      </section>
+
+      <section class="numbers-section" id="numeros">
+        <p class="eyebrow">Em números</p>
+        <div class="numbers-grid numbers-grid--single">
+          <article>
+            <dt>Mais de R$150 Milhões</dt>
+            <dd>em Capital Segurado.</dd>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section__header">
+          <p class="eyebrow">Perguntas comuns</p>
+          <h2 id="faq-title">Antes de começar, talvez você pergunte:</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Se algo acontecer, a seguradora paga mesmo?</summary>
+            <p>Ela precisa pagar quando a apólice foi bem contratada, com declaração correta e cobertura alinhada ao risco. Por isso o método importa.</p>
+          </details>
+          <details>
+            <summary>Quanto custa, em média?</summary>
+            <p>Depende de idade, saúde, profissão, capital segurado e coberturas. O diagnóstico ajuda a não contratar pouco nem pagar por excesso.</p>
+          </details>
+          <details>
+            <summary>O custo real de ficar exposto é maior que a mensalidade?</summary>
+            <p>Na maioria dos casos, sim. O risco financeiro de perder renda, consumir reserva ou vender patrimônio costuma ser muito maior que uma apólice bem dimensionada.</p>
+          </details>
+          <details>
+            <summary>Por que benefícios são negados?</summary>
+            <p>Normalmente por contratação genérica, declaração de saúde mal preenchida ou cobertura desalinhada com o perfil real do segurado.</p>
+          </details>
+          <details>
+            <summary>Preciso fazer exame médico?</summary>
+            <p>Nem sempre. Algumas seguradoras usam questionário de saúde e análise de perfil; outras podem pedir exames em casos específicos.</p>
+          </details>
+          <details>
+            <summary>Por que contratar com corretor e não direto com seguradora?</summary>
+            <p>Porque um consultor exclusivo ajuda a comparar, preencher corretamente, revisar e acompanhar você depois da contratação.</p>
+          </details>
+          <details>
+            <summary>Meus dados ficam em algum CRM? Vou ser ligado toda hora?</summary>
+            <p>Não existe ligação automática. Você só avança para atendimento quando escolher falar com a LM.</p>
+          </details>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <p>LM Gestão de Riscos</p>
+          <span>Consultoria em seguro de vida, proteção de renda e planejamento de legado.</span>
+        </div>
+        <nav aria-label="Links">
+          <a href="https://wa.me/5545999127768" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="../privacidade.html">Política de privacidade</a>
+          <a href="../termos.html">Termos de uso</a>
+        </nav>
+      </footer>
     </main>
 
-    <script src="./script.js?v=20260714-funil-lm-v1"></script>
+    <script>
+      window.LM_CALENDLY_URL = "https://calendly.com/lucas-mseg/30min";
+    </script>
+    <script src="./script.js?v=20260714-agenda-v1"></script>
   </body>
 </html>

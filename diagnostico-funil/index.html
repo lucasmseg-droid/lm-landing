@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Diagnostico rapido de protecao financeira da LM Gestao de Riscos."
+    />
+    <title>Diagnóstico de proteção | LM Gestão de Riscos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260714-funil-lm-v1" />
+  </head>
+  <body>
+    <main class="funnel-shell" id="app">
+      <section class="screen screen--hero is-active" id="heroScreen" aria-labelledby="heroTitle">
+        <div class="brand-mark" aria-label="LM Gestão de Riscos">
+          <img src="./assets/lm-logo-transparent.png" alt="LM Gestão de Riscos" />
+        </div>
+
+        <div class="hero-content">
+          <h1 id="heroTitle">
+            Descubra o Nível de Proteção
+            <span>da Sua Família</span>
+          </h1>
+          <p>
+            Responda <strong>10 perguntas rápidas</strong> e receba uma
+            <strong>análise personalizada</strong> sobre o melhor plano de proteção
+            financeira para sua família.
+          </p>
+
+          <div class="trust-row" aria-label="Resumo do diagnóstico">
+            <span><b aria-hidden="true">⏱</b> Leva apenas 2 minutos</span>
+            <span><b aria-hidden="true">🎯</b> 100% personalizado</span>
+            <span><b aria-hidden="true">🔒</b> Sem compromisso</span>
+          </div>
+
+          <button class="primary-button" id="startButton" type="button">
+            Iniciar Avaliação Gratuita
+          </button>
+        </div>
+      </section>
+
+      <section class="screen screen--quiz" id="quizScreen" aria-live="polite" hidden>
+        <div class="quiz-card">
+          <div class="brand-mark brand-mark--small">
+            <img src="./assets/lm-logo-transparent.png" alt="LM Gestão de Riscos" />
+          </div>
+
+          <div class="progress-header" id="progressHeader">
+            <span id="progressLabel">Pergunta 1 de 10</span>
+            <span id="progressPercent">10%</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <i id="progressBar"></i>
+          </div>
+
+          <div id="questionPanel"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js?v=20260714-funil-lm-v1"></script>
+  </body>
+</html>
