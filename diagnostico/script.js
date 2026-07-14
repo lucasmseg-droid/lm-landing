@@ -3,8 +3,11 @@ const progressText = document.querySelector("#progressText");
 const progressBar = document.querySelector("#progressBar");
 const questionCard = document.querySelector("#questionCard");
 const backButton = document.querySelector("#backButton");
+const schedulerSectionEl = document.querySelector("#agenda");
+const calendlyEmbedEl = document.querySelector("#calendlyEmbed");
 
 const WHATSAPP_NUMBER = "5545999127768";
+const CALENDLY_URL = window.LM_CALENDLY_URL || "https://calendly.com/lucas-mseg/30min";
 
 const state = {
   step: 0,
@@ -146,6 +149,33 @@ const buildMessage = () => {
     "",
     "Quero entender as coberturas recomendadas.",
   ].join("\n");
+};
+
+const buildCalendlyUrl = () => {
+  const url = new URL(CALENDLY_URL);
+  if (state.lead.name) url.searchParams.set("name", state.lead.name);
+  if (state.lead.email) url.searchParams.set("email", state.lead.email);
+  url.searchParams.set("hide_event_type_details", "1");
+  url.searchParams.set("hide_gdpr_banner", "1");
+  url.searchParams.set("background_color", "ffffff");
+  url.searchParams.set("text_color", "061d33");
+  url.searchParams.set("primary_color", "1768a8");
+  url.searchParams.set("utm_source", "diagnostico-lm");
+  return url.toString();
+};
+
+const renderCalendly = () => {
+  if (!schedulerSectionEl || !calendlyEmbedEl) return;
+
+  const frame = document.createElement("iframe");
+  frame.className = "calendly-frame";
+  frame.title = "Agenda para apresentação do plano";
+  frame.src = buildCalendlyUrl();
+  frame.loading = "lazy";
+
+  calendlyEmbedEl.replaceChildren(frame);
+  schedulerSectionEl.hidden = false;
+  schedulerSectionEl.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const updateProgress = () => {
@@ -314,7 +344,7 @@ const renderResult = () => {
         <h2>${state.lead.name || "Agora"}, vamos transformar esse diagnóstico em proteção?</h2>
         <p>Lucas responde pessoalmente. Sem bot, sem call center, sem empurrada de produto.</p>
         <a class="button button--primary" target="_blank" rel="noreferrer" href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}">Falar com Lucas →</a>
-        <a class="button button--secondary" href="#numeros">Quero fazer meu plano sozinho</a>
+        <a class="button button--secondary" href="#agenda" data-open-scheduler>Quero fazer meu plano sozinho</a>
         <small>Resposta pelo próprio Lucas · Não é bot</small>
       </section>
     </article>
@@ -332,6 +362,12 @@ backButton.addEventListener("click", () => {
 document.addEventListener("click", (event) => {
   const link = event.target.closest('a[href^="#"]');
   if (!link) return;
+
+  if (link.matches("[data-open-scheduler]")) {
+    event.preventDefault();
+    renderCalendly();
+    return;
+  }
 
   const target = document.querySelector(link.getAttribute("href"));
   if (!target) return;

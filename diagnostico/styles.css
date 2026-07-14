@@ -661,6 +661,127 @@ input {
   margin-top: 26px;
 }
 
+.scheduler-section[hidden] {
+  display: none;
+}
+
+.scheduler-section {
+  padding: 72px 0 88px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(79, 157, 255, 0.08), rgba(255, 255, 255, 0.018) 48%, rgba(3, 3, 4, 0.86)),
+    var(--bg);
+}
+
+.scheduler {
+  width: min(1020px, calc(100% - 38px));
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+}
+
+.scheduler__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: end;
+}
+
+.scheduler__heading h2 {
+  max-width: 700px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  line-height: 1.05;
+}
+
+.scheduler__heading p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.scheduler__steps {
+  min-width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.scheduler__steps li {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.scheduler__steps li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.scheduler__card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.scheduler__card-bar {
+  min-height: 42px;
+  padding: 0 18px;
+  border-bottom: 1px solid #e5edf5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8fc 100%);
+}
+
+.scheduler__card-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #c8d7e4;
+}
+
+.scheduler__card-bar span:nth-child(2) {
+  background: #d7b46a;
+}
+
+.scheduler__card-bar span:nth-child(3) {
+  background: #1768a8;
+}
+
+.scheduler__embed,
+.calendly-frame {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  min-height: 760px;
+  border: 0;
+  background: #ffffff;
+}
+
+.calendly-frame {
+  height: 760px;
+}
+
 .how-section,
 .method-section,
 .proof-section {
@@ -1142,6 +1263,34 @@ input {
   .info-card p,
   .check-list li {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .scheduler-section {
+    padding: 54px 0 64px;
+  }
+
+  .scheduler__heading {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .scheduler__steps {
+    min-width: 0;
+  }
+
+  .scheduler__card {
+    border-radius: 22px;
+  }
+
+  .scheduler__embed,
+  .calendly-frame {
+    min-height: 700px;
+  }
+
+  .calendly-frame {
+    height: 700px;
   }
 }
 

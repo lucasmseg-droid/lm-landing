@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260714-desktop-responsivo-v3" />
+    <link rel="stylesheet" href="./styles.css?v=20260714-agenda-v1" />
   </head>
   <body>
     <main>
@@ -43,6 +43,31 @@
           <div class="question-card" id="questionCard"></div>
           <div class="diagnostic-actions">
             <button class="back-button" id="backButton" type="button">← Voltar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="scheduler-section" id="agenda" hidden aria-labelledby="scheduler-title">
+        <div class="scheduler">
+          <div class="scheduler__heading">
+            <div>
+              <p class="eyebrow">Próximo passo</p>
+              <h2 id="scheduler-title">Escolha o melhor horário para receber seu plano.</h2>
+              <p>Lucas organiza suas respostas e apresenta uma solução alinhada ao seu momento, com explicação simples sobre valores, coberturas e próximos passos.</p>
+            </div>
+            <ul class="scheduler__steps" aria-label="Como funciona a apresentação">
+              <li>30 minutos</li>
+              <li>Diagnóstico individual</li>
+              <li>Plano personalizado</li>
+            </ul>
+          </div>
+          <div class="scheduler__card">
+            <div class="scheduler__card-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="scheduler__embed" id="calendlyEmbed"></div>
           </div>
         </div>
       </section>
@@ -180,6 +205,9 @@
       </footer>
     </main>
 
-    <script src="./script.js?v=20260714-desktop-responsivo-v3"></script>
+    <script>
+      window.LM_CALENDLY_URL = "https://calendly.com/lucas-mseg/30min";
+    </script>
+    <script src="./script.js?v=20260714-agenda-v1"></script>
   </body>
 </html>
