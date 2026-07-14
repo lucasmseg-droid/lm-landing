@@ -132,7 +132,7 @@ const buildMessage = () => {
   const risk = getRisk();
   const answers = state.answers.map((answer, index) => `${index + 1}. ${questions[index].title}: ${answer.value}`);
   return [
-    `Olá Guilherme, terminei o diagnóstico e meu perfil é ${risk.label}.`,
+    `Olá Lucas, terminei o diagnóstico e meu perfil é ${risk.label}.`,
     "",
     `Nome: ${state.lead.name || "Não informado"}`,
     `Email: ${state.lead.email || "Não informado"}`,
@@ -303,19 +303,19 @@ const renderResult = () => {
       <section class="report-section">
         <p class="eyebrow">Próximos passos</p>
         <ol class="steps-list">
-          <li><strong>01</strong><span><b>Fale com Guilherme</b>Resposta em poucos minutos, direto pelo WhatsApp. Sem call center.</span></li>
+          <li><strong>01</strong><span><b>Fale com Lucas</b>Resposta em poucos minutos, direto pelo WhatsApp. Sem call center.</span></li>
           <li><strong>02</strong><span><b>Receba proposta sob medida</b>Plano montado com base no diagnóstico, comparando as melhores seguradoras.</span></li>
           <li><strong>03</strong><span><b>Contrate quando fizer sentido</b>Zero pressão. Você decide o timing, assina online, começa a cobertura.</span></li>
         </ol>
       </section>
 
       <section class="final-cta-card">
-        <div class="avatar" aria-hidden="true">G</div>
+        <div class="avatar" aria-hidden="true">L</div>
         <h2>${state.lead.name || "Agora"}, vamos transformar esse diagnóstico em proteção?</h2>
-        <p>Guilherme responde pessoalmente. Sem bot, sem call center, sem empurrada de produto.</p>
-        <a class="button button--primary" target="_blank" rel="noreferrer" href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}">Falar com Guilherme →</a>
+        <p>Lucas responde pessoalmente. Sem bot, sem call center, sem empurrada de produto.</p>
+        <a class="button button--primary" target="_blank" rel="noreferrer" href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}">Falar com Lucas →</a>
         <a class="button button--secondary" href="#numeros">Quero fazer meu plano sozinho</a>
-        <small>Resposta pelo próprio Guilherme · Não é bot</small>
+        <small>Resposta pelo próprio Lucas · Não é bot</small>
       </section>
     </article>
   `;

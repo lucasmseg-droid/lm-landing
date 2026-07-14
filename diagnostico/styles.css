@@ -833,6 +833,12 @@ input {
   margin-top: 26px;
 }
 
+.numbers-grid--single {
+  max-width: 680px;
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+}
+
 .numbers-grid article {
   padding: 24px 12px;
 }
@@ -851,6 +857,14 @@ input {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.numbers-grid--single dt {
+  font-size: clamp(2.7rem, 10vw, 4.75rem);
+}
+
+.numbers-grid--single dd {
+  font-size: clamp(0.92rem, 2.5vw, 1.12rem);
 }
 
 .faq-section {
