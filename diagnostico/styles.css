@@ -76,20 +76,13 @@ input {
 
 .landing-hero::before {
   z-index: 1;
-  inset: -8% -18% 34%;
-  background:
-    radial-gradient(ellipse at 10% 62%, rgba(150, 169, 192, 0.16) 0 11%, transparent 30%),
-    radial-gradient(ellipse at 32% 43%, rgba(91, 116, 147, 0.16) 0 14%, transparent 34%),
-    radial-gradient(ellipse at 58% 56%, rgba(185, 198, 214, 0.14) 0 10%, transparent 28%),
-    radial-gradient(ellipse at 84% 38%, rgba(91, 119, 154, 0.18) 0 14%, transparent 36%),
-    linear-gradient(102deg, transparent 0 16%, rgba(197, 210, 226, 0.09) 28%, transparent 48% 58%, rgba(117, 145, 178, 0.1) 72%, transparent 88%);
-  filter: blur(12px);
-  opacity: 0.72;
-  transform: translate3d(-3%, 0, 0) scale(1.04);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 76%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 76%, transparent 100%);
-  mix-blend-mode: screen;
-  animation: heroCloudDrift 24s linear infinite alternate;
+  background: url("./assets/hero-lighthouse.png") center top / cover no-repeat;
+  filter: saturate(1.08) contrast(1.04) brightness(1.08) blur(0.2px);
+  opacity: 0.34;
+  transform: translate3d(-1.2%, 0, 0) scale(1.035);
+  mask-image: linear-gradient(180deg, #000 0%, #000 46%, transparent 66%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 46%, transparent 66%);
+  animation: heroCloudDrift 22s ease-in-out infinite alternate;
 }
 
 .landing-hero::after {
@@ -165,18 +158,18 @@ input {
 
 @keyframes heroCloudDrift {
   0% {
-    transform: translate3d(-3%, 0.2%, 0) scale(1.04);
-    opacity: 0.54;
+    transform: translate3d(-1.2%, -0.35%, 0) scale(1.035);
+    opacity: 0.24;
   }
 
-  50% {
-    transform: translate3d(1.5%, -0.25%, 0) scale(1.045);
-    opacity: 0.76;
+  46% {
+    transform: translate3d(1.4%, 0.15%, 0) scale(1.042);
+    opacity: 0.42;
   }
 
   100% {
-    transform: translate3d(4%, 0.15%, 0) scale(1.04);
-    opacity: 0.62;
+    transform: translate3d(2.2%, -0.15%, 0) scale(1.038);
+    opacity: 0.31;
   }
 }
 
@@ -192,8 +185,8 @@ input {
   48% {
     color: #fff;
     text-shadow:
-      0 0 8px rgba(255, 255, 255, 0.24),
-      0 0 18px rgba(79, 157, 255, 0.18);
+      0 0 10px rgba(255, 255, 255, 0.28),
+      0 0 24px rgba(79, 157, 255, 0.26);
   }
 }
 
