@@ -100,67 +100,6 @@ input {
     linear-gradient(180deg, rgba(3, 3, 4, 0.08), rgba(3, 3, 4, 0.18) 56%, rgba(3, 3, 4, 0.92));
 }
 
-.hero-motion {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.hero-motion__clouds,
-.hero-motion__sea {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-}
-
-.hero-motion__clouds {
-  top: 7%;
-  left: -45%;
-  width: 190%;
-  height: 48%;
-  background:
-    radial-gradient(ellipse 26% 17% at 12% 62%, rgba(232, 240, 250, 0.68) 0 22%, transparent 58%),
-    radial-gradient(ellipse 30% 18% at 36% 46%, rgba(158, 181, 210, 0.56) 0 25%, transparent 62%),
-    radial-gradient(ellipse 34% 19% at 62% 58%, rgba(229, 238, 250, 0.6) 0 22%, transparent 60%),
-    radial-gradient(ellipse 28% 16% at 86% 42%, rgba(151, 177, 208, 0.52) 0 28%, transparent 64%),
-    linear-gradient(96deg, transparent 0 8%, rgba(233, 242, 252, 0.26) 22%, transparent 42% 54%, rgba(169, 194, 221, 0.24) 70%, transparent 92%);
-  filter: blur(9px);
-  opacity: 0.72;
-  mix-blend-mode: screen;
-  transform: translate3d(-8%, 0, 0);
-  animation: heroCloudSheet 10s linear infinite;
-}
-
-.hero-motion__clouds--rear {
-  top: 25%;
-  left: -35%;
-  height: 36%;
-  opacity: 0.44;
-  filter: blur(14px);
-  animation-duration: 16s;
-  animation-direction: reverse;
-}
-
-.hero-motion__sea {
-  left: -30%;
-  right: -30%;
-  bottom: 0;
-  height: 34%;
-  background:
-    repeating-linear-gradient(177deg, transparent 0 18px, rgba(166, 207, 245, 0.2) 23px, transparent 34px),
-    repeating-linear-gradient(4deg, transparent 0 26px, rgba(71, 140, 204, 0.18) 34px, transparent 52px),
-    radial-gradient(ellipse at 28% 28%, rgba(198, 229, 255, 0.24), transparent 46%);
-  filter: blur(1.6px);
-  opacity: 0.58;
-  mix-blend-mode: screen;
-  transform: translate3d(-4%, 0, 0);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 28%, #000 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 28%, #000 100%);
-  animation: heroSeaFlow 4.8s linear infinite;
-}
-
 .hero-copy {
   position: relative;
   z-index: 3;
@@ -241,28 +180,6 @@ input {
   }
 }
 
-@keyframes heroCloudSheet {
-  0% {
-    transform: translate3d(-9%, 0.2%, 0);
-  }
-
-  100% {
-    transform: translate3d(10%, -0.6%, 0);
-  }
-}
-
-@keyframes heroSeaFlow {
-  0% {
-    background-position: 0 0, 0 0, 0 0;
-    transform: translate3d(-4%, 0, 0);
-  }
-
-  100% {
-    background-position: 150px 18px, -120px 28px, 80px 0;
-    transform: translate3d(4%, 0, 0);
-  }
-}
-
 @keyframes protectionGlow {
   0%,
   100% {
@@ -281,6 +198,7 @@ input {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .landing-hero::before,
   .hero-title-glow {
     animation: none;
   }
