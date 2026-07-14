@@ -65,12 +65,24 @@ input {
   background: #030304 url("./assets/hero-lighthouse.png") center / cover no-repeat;
 }
 
+.landing-hero::before,
 .landing-hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+}
+
+.landing-hero::before {
+  z-index: 1;
+  background: url("./assets/hero-lighthouse.png") center top / cover no-repeat;
+  filter: saturate(1.08) contrast(1.04) brightness(1.08) blur(0.2px);
+  opacity: 0.34;
+  transform: translate3d(-1.2%, 0, 0) scale(1.035);
+  mask-image: linear-gradient(180deg, #000 0%, #000 46%, transparent 66%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 46%, transparent 66%);
+  animation: heroCloudDrift 22s ease-in-out infinite alternate;
 }
 
 .landing-hero::after {
@@ -96,6 +108,13 @@ input {
   font-size: clamp(2.45rem, 10.4vw, 5.1rem);
   line-height: 0.98;
   letter-spacing: 0;
+}
+
+.hero-title-glow {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: protectionGlow 3.7s ease-in-out infinite;
 }
 
 .hero-copy p {
@@ -135,6 +154,47 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@keyframes heroCloudDrift {
+  0% {
+    transform: translate3d(-1.2%, -0.35%, 0) scale(1.035);
+    opacity: 0.24;
+  }
+
+  46% {
+    transform: translate3d(1.4%, 0.15%, 0) scale(1.042);
+    opacity: 0.42;
+  }
+
+  100% {
+    transform: translate3d(2.2%, -0.15%, 0) scale(1.038);
+    opacity: 0.31;
+  }
+}
+
+@keyframes protectionGlow {
+  0%,
+  100% {
+    color: #f8f8fb;
+    text-shadow:
+      0 0 0 rgba(255, 255, 255, 0),
+      0 0 0 rgba(79, 157, 255, 0);
+  }
+
+  48% {
+    color: #fff;
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.28),
+      0 0 24px rgba(79, 157, 255, 0.26);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-hero::before,
+  .hero-title-glow {
+    animation: none;
+  }
 }
 
 .brand {
