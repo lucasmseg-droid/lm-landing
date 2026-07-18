@@ -942,7 +942,9 @@ input {
 
 .policy-preview div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   padding: 18px 20px;
   border-radius: 16px;
@@ -958,6 +960,33 @@ input {
   font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.choice-preview {
+  padding: 16px;
+}
+
+.choice-preview div:not(.choice-preview__heading) {
+  justify-content: flex-start;
+}
+
+.choice-preview div:not(.choice-preview__heading)::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 999px;
+  background: var(--blue);
+  box-shadow: 0 0 0 6px rgba(79, 157, 255, 0.12);
+}
+
+.choice-preview__heading {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.choice-preview__heading strong {
+  color: var(--text);
+  font-size: clamp(1.12rem, 4.5vw, 1.38rem);
 }
 
 .numbers-section {
