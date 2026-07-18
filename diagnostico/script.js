@@ -6,7 +6,7 @@ const backButton = document.querySelector("#backButton");
 const schedulerSectionEl = document.querySelector("#agenda");
 const calendlyEmbedEl = document.querySelector("#calendlyEmbed");
 
-const WHATSAPP_NUMBER = "5545999127768";
+const WHATSAPP_NUMBER = "5519982404418";
 const CALENDLY_URL = window.LM_CALENDLY_URL || "https://calendly.com/lucas-mseg/30min";
 
 const state = {
@@ -319,7 +319,7 @@ const renderResult = () => {
           </article>
           <article class="info-card">
             <span class="icon-circle">♡</span>
-            <h2>O que um plano sob medida custa</h2>
+            <h2>Quanto</h2>
             <p>Não trabalhamos com valor de prateleira. O custo é resultado direto do que o diagnóstico aponta como prioritário pra você. Levantamos opções em mais de uma seguradora e mostramos o que cada conjunto de coberturas representa por mês, sem compromisso.</p>
           </article>
           <article class="info-card">
@@ -333,7 +333,7 @@ const renderResult = () => {
       <section class="report-section">
         <p class="eyebrow">Próximos passos</p>
         <ol class="steps-list">
-          <li><strong>01</strong><span><b>Fale com Lucas</b>Resposta em poucos minutos, direto pelo WhatsApp. Sem call center.</span></li>
+          <li><strong>01</strong><span><b>Fale com especialista</b>Resposta em poucos minutos, direto pelo WhatsApp. Sem call center.</span></li>
           <li><strong>02</strong><span><b>Receba proposta sob medida</b>Plano montado com base no diagnóstico, comparando as melhores seguradoras.</span></li>
           <li><strong>03</strong><span><b>Contrate quando fizer sentido</b>Zero pressão. Você decide o timing, assina online, começa a cobertura.</span></li>
         </ol>
@@ -342,10 +342,10 @@ const renderResult = () => {
       <section class="final-cta-card">
         <div class="avatar" aria-hidden="true">L</div>
         <h2>${state.lead.name || "Agora"}, vamos transformar esse diagnóstico em proteção?</h2>
-        <p>Lucas responde pessoalmente. Sem bot, sem call center, sem empurrada de produto.</p>
-        <a class="button button--primary" target="_blank" rel="noreferrer" href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}">Falar com Lucas →</a>
+        <p>Atendimento com especialista. Sem bot, sem call center, sem empurrada de produto.</p>
+        <a class="button button--primary" target="_blank" rel="noreferrer" href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}">Falar com especialista →</a>
         <a class="button button--secondary" href="#agenda" data-open-scheduler>Quero fazer meu plano sozinho</a>
-        <small>Resposta pelo próprio Lucas · Não é bot</small>
+        <small>Feito por especialista, sem solução genérica.</small>
       </section>
     </article>
   `;
