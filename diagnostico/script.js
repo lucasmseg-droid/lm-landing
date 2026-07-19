@@ -232,7 +232,7 @@ const renderLeadForm = () => {
     <form class="lead-form" id="leadForm">
       <p class="form-kicker">Último passo</p>
       <h1>Para onde enviamos sua análise?</h1>
-      <p class="question-note">Resposta imediata. Sem ligação sem o seu pedido.</p>
+      <p class="question-note">Resposta imediata. Sem ligação.</p>
 
       <label>
         Nome
