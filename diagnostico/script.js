@@ -38,7 +38,7 @@ const questions = [
     ],
   },
   {
-    title: "Se você ficasse afastado, sua renda continuaria entrando?",
+    title: "Se você ficasse afastado, sua renda continuaria igual?",
     options: [
       { label: "Não continuaria", value: "Renda não continuaria em caso de afastamento", score: 3 },
       { label: "Só por pouco tempo", value: "Renda continuaria por pouco tempo", score: 2 },

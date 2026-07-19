@@ -246,7 +246,6 @@ input {
 }
 
 .option-button.is-selected,
-.option-button:hover,
 .option-button:focus-visible {
   border-color: var(--line-strong);
   background:
@@ -258,19 +257,28 @@ input {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.option-button.is-selected b,
-.option-button:hover b,
-.option-button:focus-visible b {
+.option-button.is-selected b {
   border-color: transparent;
   background: var(--blue);
 }
 
-.option-button.is-selected b::before,
-.option-button:hover b::before,
-.option-button:focus-visible b::before {
+.option-button.is-selected b::before {
   content: "✓";
   color: #04101c;
   font-weight: 900;
+}
+
+@media (hover: hover) {
+  .option-button:hover {
+    border-color: var(--line-strong);
+    background:
+      linear-gradient(180deg, rgba(45, 92, 176, 0.16), rgba(45, 92, 176, 0.06)),
+      #171b24;
+    box-shadow:
+      0 0 0 1px rgba(93, 163, 255, 0.14),
+      0 16px 42px rgba(65, 133, 255, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
 }
 
 .diagnostic-actions {
