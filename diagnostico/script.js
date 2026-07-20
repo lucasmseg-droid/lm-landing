@@ -41,7 +41,7 @@ const questions = [
     title: "Se você ficasse afastado, sua renda continuaria igual?",
     options: [
       { label: "Não continuaria", value: "Renda não continuaria em caso de afastamento", score: 3 },
-      { label: "Só por pouco tempo", value: "Renda continuaria por pouco tempo", score: 2 },
+      { label: "Por pouco tempo", value: "Renda continuaria por pouco tempo", score: 2 },
       { label: "Sim, tenho proteção", value: "Tem proteção para afastamento", score: 0 },
     ],
   },
@@ -138,7 +138,6 @@ const buildMessage = () => {
     `Olá Lucas, terminei o diagnóstico e meu perfil é ${risk.label}.`,
     "",
     `Nome: ${state.lead.name || "Não informado"}`,
-    `Email: ${state.lead.email || "Não informado"}`,
     `WhatsApp: ${state.lead.phone || "Não informado"}`,
     "",
     `Pontuação: ${getScore()}/17`,
@@ -154,7 +153,6 @@ const buildMessage = () => {
 const buildCalendlyUrl = () => {
   const url = new URL(CALENDLY_URL);
   if (state.lead.name) url.searchParams.set("name", state.lead.name);
-  if (state.lead.email) url.searchParams.set("email", state.lead.email);
   url.searchParams.set("hide_event_type_details", "1");
   url.searchParams.set("hide_gdpr_banner", "1");
   url.searchParams.set("background_color", "ffffff");
@@ -239,19 +237,15 @@ const renderLeadForm = () => {
         <input name="name" autocomplete="name" placeholder="Como posso te chamar?" />
       </label>
       <label>
-        Email
-        <input name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" />
-      </label>
-      <label>
         WhatsApp
         <input name="phone" inputmode="tel" autocomplete="tel" placeholder="(xx) xxxxx-xxxx" />
       </label>
       <label class="consent-row">
         <input name="consent" type="checkbox" />
-        <span>Concordo em receber minha análise no email e no WhatsApp. Leia a <a href="../privacidade.html">política de privacidade</a>.</span>
+        <span>Concordo em receber minha análise pelo WhatsApp. Leia a <a href="../privacidade.html">política de privacidade</a>.</span>
       </label>
       <button class="button button--primary" type="submit">Ver minha análise</button>
-      <small>Seus dados são usados apenas para enviar sua análise personalizada. Sem spam. Nunca compartilhados.</small>
+      <small>Seus dados são usados apenas para enviar sua análise personalizada pelo WhatsApp. Sem spam. Nunca compartilhados.</small>
     </form>
   `;
 
@@ -260,7 +254,7 @@ const renderLeadForm = () => {
     const data = new FormData(event.currentTarget);
     state.lead = {
       name: String(data.get("name") || "").trim(),
-      email: String(data.get("email") || "").trim(),
+      email: "",
       phone: String(data.get("phone") || "").trim(),
       consent: data.get("consent") === "on",
     };

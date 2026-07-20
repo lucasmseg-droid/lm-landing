@@ -23,6 +23,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 0%, rgba(62, 130, 255, 0.12), transparent 34rem),
     var(--bg);
@@ -382,6 +383,8 @@ input {
   cursor: pointer;
   font-size: clamp(1.05rem, 4.6vw, 1.28rem);
   font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -1355,35 +1358,176 @@ input {
 
 @media (max-width: 560px) {
   .landing-hero {
-    min-height: 96svh;
+    min-height: 100svh;
+    padding-bottom: 32px;
+    background-position: 50% 50%;
+  }
+
+  .hero-copy {
+    width: min(100% - 32px, 520px);
+    padding-bottom: clamp(24px, 7vh, 56px);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.38rem, 10vw, 2.86rem);
+    line-height: 1.04;
+  }
+
+  .hero-copy p {
+    margin-top: 20px;
+    font-size: clamp(1rem, 4.6vw, 1.12rem);
+  }
+
+  .hero-copy .button {
+    min-height: 70px;
+    margin-top: 30px;
+    padding-inline: 18px;
+    font-size: clamp(0.94rem, 4.5vw, 1.06rem);
+    white-space: nowrap;
+  }
+
+  .hero-copy small {
+    font-size: 0.82rem;
   }
 
   .diagnostic-hero {
-    padding-top: 54px;
+    min-height: auto;
+    padding: 42px 0 56px;
   }
 
   .topbar {
     min-height: 48px;
   }
 
+  .brand {
+    width: clamp(132px, 42vw, 166px);
+  }
+
   .diagnostic-app {
-    width: min(100% - 36px, 520px);
-    border-radius: 30px;
-    padding: 30px 24px;
+    width: min(100% - 24px, 520px);
+    border-radius: 22px;
+    padding: 24px 18px;
   }
 
   .progress-row {
-    gap: 20px;
-    margin-bottom: 54px;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .progress-row span {
+    font-size: 0.72rem;
+    letter-spacing: 0.13em;
+  }
+
+  .question-card h1,
+  .lead-form h1,
+  .result-report > h1 {
+    font-size: clamp(1.74rem, 8vw, 2.24rem);
+    line-height: 1.08;
+  }
+
+  .question-note {
+    margin: 14px 0 22px;
+    font-size: 0.98rem;
   }
 
   .option-list {
-    margin-top: 56px;
+    margin-top: 32px;
+    gap: 12px;
   }
 
   .option-button {
-    min-height: 86px;
-    padding-inline: 22px;
+    min-height: 66px;
+    border-radius: 16px;
+    gap: 12px;
+    padding: 14px 16px;
+    font-size: clamp(0.98rem, 4.5vw, 1.08rem);
+  }
+
+  .option-button b {
+    width: 28px;
+    height: 28px;
+  }
+
+  .lead-form {
+    gap: 14px;
+  }
+
+  .lead-form label {
+    font-size: 0.94rem;
+  }
+
+  .lead-form input {
+    min-height: 56px;
+    border-radius: 12px;
+  }
+
+  .button {
+    min-height: 58px;
+    padding-inline: 18px;
+    font-size: 1rem;
+  }
+
+  .risk-pill {
+    max-width: 100%;
+    white-space: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .success-mark {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 24px;
+    font-size: 3rem;
+  }
+
+  .score-card,
+  .info-card,
+  .steps-list li,
+  .final-cta-card {
+    padding: 22px 18px;
+  }
+
+  .score-labels {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .report-section,
+  .final-cta-card {
+    margin-top: 44px;
+  }
+
+  .check-list li {
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+  }
+
+  .check-list li::before {
+    width: 26px;
+    height: 26px;
+  }
+
+  .steps-list li {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .steps-list strong {
+    font-size: 1.75rem;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 24px;
+    font-size: 2.6rem;
+  }
+
+  .final-cta-card h2 {
+    font-size: clamp(1.58rem, 7vw, 1.96rem);
   }
 
   .score-card,
@@ -1400,7 +1544,7 @@ input {
   .method-section,
   .proof-section {
     width: min(100% - 24px, 980px);
-    padding-top: 72px;
+    padding-top: 64px;
   }
 
   .journey-grid,
@@ -1414,5 +1558,26 @@ input {
 
   .footer {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 374px) {
+  .hero-copy {
+    width: min(100% - 28px, 520px);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.12rem, 10.2vw, 2.42rem);
+  }
+
+  .hero-copy .button {
+    min-height: 62px;
+    padding-inline: 14px;
+    font-size: 0.9rem;
+  }
+
+  .diagnostic-app {
+    width: min(100% - 18px, 520px);
+    padding: 22px 14px;
   }
 }
