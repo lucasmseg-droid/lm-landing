@@ -135,12 +135,29 @@ input {
   min-height: 64px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .brand {
   width: clamp(140px, 24vw, 210px);
   opacity: 0.92;
+}
+
+.topbar-cta {
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: rgba(3, 3, 4, 0.48);
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
 }
 
 .diagnostic-app {
@@ -1088,6 +1105,30 @@ input {
   line-height: 1.6;
 }
 
+.contact-cta {
+  width: min(760px, calc(100% - 38px));
+  margin: 0 auto 78px;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 7vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.contact-cta p {
+  max-width: 560px;
+  margin: 18px auto 28px;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 4vw, 1.16rem);
+  line-height: 1.55;
+}
+
+.contact-cta .button {
+  width: min(100%, 360px);
+}
+
 .footer {
   width: min(980px, calc(100% - 38px));
   margin: 0 auto;
@@ -1397,10 +1438,17 @@ input {
 
   .topbar {
     min-height: 48px;
+    width: min(100% - 24px, 520px);
   }
 
   .brand {
-    width: clamp(132px, 42vw, 166px);
+    width: clamp(118px, 35vw, 150px);
+  }
+
+  .topbar-cta {
+    min-height: 38px;
+    padding-inline: 14px;
+    font-size: 0.82rem;
   }
 
   .diagnostic-app {
