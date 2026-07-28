@@ -6,7 +6,7 @@ const backButton = document.querySelector("#backButton");
 const schedulerSectionEl = document.querySelector("#agenda");
 const calendlyEmbedEl = document.querySelector("#calendlyEmbed");
 
-const WHATSAPP_NUMBER = "5519982404418";
+const WHATSAPP_NUMBER = "5519995021177";
 const CALENDLY_URL = window.LM_CALENDLY_URL || "https://calendly.com/lucas-mseg/30min";
 
 const state = {

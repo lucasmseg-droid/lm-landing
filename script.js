@@ -10,7 +10,7 @@ const state = {
 
 const LEAD_ENDPOINT = window.LM_LEAD_ENDPOINT || "";
 const CALENDLY_URL = window.LM_CALENDLY_URL || "";
-const WHATSAPP_NUMBER = "5519982404418";
+const WHATSAPP_NUMBER = "5519995021177";
 
 const questions = [
   {
