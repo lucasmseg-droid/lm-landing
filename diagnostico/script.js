@@ -94,6 +94,34 @@ const getRisk = () => {
         "Cirurgia / Fratura",
         "Invalidez",
       ],
+      coverageText: [
+        "Seu resultado mostra dependência alta da renda ativa. Isso significa que um afastamento por doença, acidente, cirurgia ou internação pode comprometer as contas rapidamente, antes mesmo de qualquer discussão sobre patrimônio ou sucessão.",
+        "A prioridade aqui não é começar pelo seguro mais barato, e sim montar uma proteção que pague dinheiro em vida quando você não conseguir produzir renda. Depois disso, avaliamos capital para família, invalidez e doenças graves para evitar que reserva, bens e dependentes carreguem o impacto.",
+        "Para esse perfil, o levantamento precisa comparar seguradoras com atenção a carências, exclusões, forma de comprovação de renda, regras de DIT/atestado e declaração de saúde. É onde uma apólice genérica mais costuma dar problema.",
+      ],
+      meaning: [
+        {
+          icon: "↘",
+          title: "Risco imediato de renda",
+          text: "Se a renda para, a pressão no caixa vem rápido. O plano precisa proteger meses de afastamento, não apenas eventos extremos.",
+        },
+        {
+          icon: "♡",
+          title: "Cobertura em vida é prioridade",
+          text: "Doença grave, cirurgia, fratura, internação e invalidez podem exigir dinheiro antes de qualquer indenização por morte fazer sentido.",
+        },
+        {
+          icon: "◇",
+          title: "Valor precisa nascer do impacto",
+          text: "O capital ideal sai do tamanho da sua renda, do tempo de recuperação provável e das despesas que continuariam existindo.",
+        },
+        {
+          icon: "!",
+          title: "Preenchimento técnico evita negativa",
+          text: "Quanto maior a exposição, maior a importância de declarar saúde, profissão e renda com precisão para reduzir risco de recusa no sinistro.",
+        },
+      ],
+      alert: "No seu caso, um levantamento em mais de uma seguradora é obrigatório antes de qualquer contratação.",
     };
   }
   if (score >= 8) {
@@ -112,6 +140,34 @@ const getRisk = () => {
         "Invalidez",
         "Capital sob medida para família",
       ],
+      coverageText: [
+        "Seu resultado indica que já existe alguma margem de controle, mas ainda há pontos que podem deixar renda, reserva ou família descobertos em cenários importantes. O risco não está totalmente aberto, mas também não está resolvido.",
+        "A prioridade é revisar o que você já tem, entender onde a cobertura falha e ajustar os capitais para afastamento, invalidez, doenças graves e proteção familiar. Muitas vezes o problema não é falta de seguro, é seguro desalinhado com o momento atual.",
+        "Para esse perfil, a análise precisa comparar custo mensal, amplitude das coberturas, exigências de aceitação e qualidade contratual. O objetivo é fechar as lacunas sem contratar excesso.",
+      ],
+      meaning: [
+        {
+          icon: "◐",
+          title: "Existe proteção, mas pode haver lacuna",
+          text: "Você pode estar parcialmente coberto em um cenário e totalmente descoberto em outro, principalmente em afastamento ou doença grave.",
+        },
+        {
+          icon: "↗",
+          title: "Ajuste fino vale mais que pacote pronto",
+          text: "O desenho deve equilibrar renda, família e patrimônio para não pagar por coberturas fracas ou repetidas.",
+        },
+        {
+          icon: "♡",
+          title: "Doenças graves merecem revisão",
+          text: "Mesmo com reserva, uma condição grave pode aumentar despesas e reduzir renda ao mesmo tempo. Esse ponto precisa aparecer na proposta.",
+        },
+        {
+          icon: "◇",
+          title: "Comparar seguradoras faz diferença",
+          text: "Para perfil intermediário, pequenas diferenças de cláusula, carência e aceitação mudam muito o valor real da proteção.",
+        },
+      ],
+      alert: "No seu caso, o melhor caminho é revisar o que já existe e preencher as lacunas antes de contratar algo novo.",
     };
   }
   return {
@@ -128,8 +184,50 @@ const getRisk = () => {
       "Doenças Graves",
       "Planejamento sucessório",
     ],
+    coverageText: [
+      "Seu resultado mostra um cenário mais controlado. Você parece ter mais margem de segurança, menor dependência imediata da renda ativa ou alguma estrutura que reduz o impacto de um afastamento curto.",
+      "Aqui o foco não é contratar por urgência. A prioridade é validar se a proteção existente acompanha sua renda, patrimônio, objetivos de vida e possíveis dependentes. Em perfil baixo risco, o erro comum é manter uma apólice antiga que já não conversa com a realidade atual.",
+      "A análise deve buscar eficiência: manter o que faz sentido, retirar excesso, reforçar pontos sensíveis e avaliar coberturas estratégicas como doenças graves, invalidez, sucessão e proteção patrimonial.",
+    ],
+    meaning: [
+      {
+        icon: "✓",
+        title: "Cenário mais confortável",
+        text: "Sua exposição imediata parece menor, então a decisão pode ser mais técnica e menos urgente.",
+      },
+      {
+        icon: "◇",
+        title: "O risco é contratar mal",
+        text: "Mesmo com boa reserva ou estabilidade, uma cobertura fraca pode gerar falsa sensação de segurança.",
+      },
+      {
+        icon: "♡",
+        title: "Proteção em vida ainda importa",
+        text: "Doença grave e invalidez podem mudar despesas e planejamento, mesmo quando a renda não depende 100% do trabalho diário.",
+      },
+      {
+        icon: "↗",
+        title: "Planejamento patrimonial",
+        text: "Quando o risco imediato é menor, vale usar o diagnóstico para organizar sucessão, liquidez e proteção familiar com mais calma.",
+      },
+    ],
+    alert: "No seu caso, a análise deve evitar excesso e confirmar se a proteção atual continua proporcional ao seu momento.",
   };
 };
+
+const renderRiskParagraphs = (risk) => risk.coverageText.map((paragraph) => `<p>${paragraph}</p>`).join("");
+const renderMeaningCards = (risk) =>
+  risk.meaning
+    .map(
+      (item) => `
+        <article class="info-card">
+          <span class="icon-circle">${item.icon}</span>
+          <h2>${item.title}</h2>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
 
 const buildMessage = () => {
   const risk = getRisk();
@@ -142,6 +240,8 @@ const buildMessage = () => {
     "",
     `Pontuação: ${getScore()}/17`,
     risk.title,
+    `Prioridade: ${risk.priority}`,
+    `Coberturas indicadas: ${risk.items.join(", ")}`,
     "",
     "Respostas:",
     ...answers,
@@ -288,39 +388,19 @@ const renderResult = () => {
       <section class="report-section">
         <p class="eyebrow">Indicação de coberturas</p>
         <div class="info-card">
-          <p>Para clientes de ${risk.label.replace("Perfil ", "").toUpperCase()} como você o foco precisa ser em coberturas que vão garantir sua receita caso não possa trabalhar, seja por doença, cirurgia ou afastamento por atestado. Além de garantir a renda precisamos pensar também em cenários que afetem sua reserva, seu patrimônio e seus dependentes (caso tenha).</p>
-          <p>O que vai fazer sua proteção ser adequada é calcular exatamente o impacto financeiro dos acontecimentos e estipular valores que sustentem isso ou gerem uma renda passiva para garantir seu padrão de vida.</p>
-          <p>Então nossa indicação é em coberturas que visam garantir sua renda, que te proteja em vida e que garantam financeiramente quem fica:</p>
+          ${renderRiskParagraphs(risk)}
+          <p>Para esse perfil, a indicação começa por:</p>
           <ul class="check-list">
             ${risk.items.map((item) => `<li>${item}</li>`).join("")}
           </ul>
-          <strong class="alert-line">No seu caso específico um levantamento em mais de uma seguradora é obrigatório!</strong>
+          <strong class="alert-line">${risk.alert}</strong>
         </div>
       </section>
 
       <section class="report-section">
         <p class="eyebrow">O que isso significa</p>
         <div class="meaning-grid">
-          <article class="info-card">
-            <span class="icon-circle">↘</span>
-            <h2>O custo real de ficar exposto</h2>
-            <p>Cada mês sem proteção é um mês em que sua renda, sua reserva e seu patrimônio carregam um risco que você não calculou. Quando o evento acontece, o impacto financeiro real costuma ser muito maior do que o valor de qualquer apólice mensal.</p>
-          </article>
-          <article class="info-card">
-            <span class="icon-circle">♡</span>
-            <h2>A doença muda o custo de viver</h2>
-            <p>Quando uma doença grave chega, tudo muda. Não é só a renda que pode diminuir, as despesas aumentam rapidamente. Novos tratamentos, médicos que não aceitam plano de saúde, medicamentos, cuidados extras e necessidades inesperadas passam a fazer parte da rotina.</p>
-          </article>
-          <article class="info-card">
-            <span class="icon-circle">♡</span>
-            <h2>Quanto</h2>
-            <p>Não trabalhamos com valor de prateleira. O custo é resultado direto do que o diagnóstico aponta como prioritário pra você. Levantamos opções em mais de uma seguradora e mostramos o que cada conjunto de coberturas representa por mês, sem compromisso.</p>
-          </article>
-          <article class="info-card">
-            <span class="icon-circle">♢</span>
-            <h2>Por que pagamento de benefícios são negados</h2>
-            <p>Sinistro recusado quase sempre vem antes do sinistro: na hora do preenchimento. Apólice montada de forma genérica, declaração de saúde sem detalhamento real e coberturas mal alinhadas ao perfil são as causas mais comuns de negativa.</p>
-          </article>
+          ${renderMeaningCards(risk)}
         </div>
       </section>
 
